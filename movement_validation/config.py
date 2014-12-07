@@ -16,7 +16,7 @@ Usage
 ---------------------------------------
 Best practice is to use this via "from movement_validation import config", 
 and then reference the configuration settings like this: e.g. "config.FPS" 
-rather than doing "from wormpy.config import *" and referencing "FPS"
+rather than doing " from wormpy.config import * " and referencing "FPS"
 since the latter approach pollutes the global namespace.
   
 """

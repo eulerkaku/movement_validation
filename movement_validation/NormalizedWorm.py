@@ -471,16 +471,20 @@ class NormalizedWorm(object):
 
         Notes
         ---------------------------------------    
-        To perform this matrix multiplication we are multiplying:
+        To perform this matrix multiplication we are multiplying::
+
           rot_matrix * s
+
         This is shape 2 x 2 x n, times 2 x 49 x n.
         Basically we want the first matrix treated as two-dimensional,
         and the second matrix treated as one-dimensional,
         with the results applied elementwise in the other dimensions.
 
         To make this work I believe we need to pre-broadcast rot_matrix into
-        the skeleton points dimension (the one with 49 points) so that we have
+        the skeleton points dimension (the one with 49 points) so that we have::
+            
           2 x 2 x 49 x n, times 2 x 49 x n
+
         #s1 = np.rollaxis(self.skeletons, 1)
 
         #rot_matrix = np.ones(np.shape(s1)) * rot_matrix
@@ -549,7 +553,7 @@ class NormalizedWorm(object):
         Returns
         ---------------------------------------    
         int
-          number of frames in the video
+            number of frames in the video. 
 
         """
 
@@ -589,10 +593,13 @@ class NormalizedWorm(object):
     @property
     def contour_x(self):
         """ 
-          Return the approximate worm contour, derived from data
-          NOTE: The first and last points are duplicates, so we omit
-                those on the second set. We also reverse the contour so that
-                it encompasses an "out and back" contour
+        Return the approximate worm contour, derived from data
+
+        Notes
+        --------------------------------------- 
+        The first and last points are duplicates, so we omit
+        those on the second set. We also reverse the contour so that
+        it encompasses an "out and back" contour
         """
         vc = self.vulva_contours
         nvc = self.non_vulva_contours
