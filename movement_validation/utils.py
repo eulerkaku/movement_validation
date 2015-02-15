@@ -102,9 +102,9 @@ def separated_peaks(x, dist, use_max, value_cutoff):
     ---------------------------------------    
     Formerly seg_worm.util.maxPeaksDist
     i.e. [PEAKS INDICES] = seg_worm.util.maxPeaksDist \
-        (x, dist,use_max,value_cutoff,*chain_code_lengths)
+    (x, dist,use_max,value_cutoff,*chain_code_lengths)
     i.e. https://github.com/JimHokanson/SegwormMatlabClasses/ ...
-              blob/master/%2Bseg_worm/%2Butil/maxPeaksDist.m
+    blob/master/%2Bseg_worm/%2Butil/maxPeaksDist.m
 
     Used in seg_worm.feature_helpers.posture.getAmplitudeAndWavelength
     Used in locomotion_bends.py
